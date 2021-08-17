@@ -34,11 +34,11 @@ hint - you should be looking at the stage key inside of the objects
 
 function getFinals(data) {
    //filter data for final stage
-   const allFinals = data.filter(item => item.Stage === 'Finals');
+   const allFinals = data.filter(item => item.Stage === 'Final');
    return allFinals;
 }
 
-console.log(getFinals(fifaData))
+console.log(getFinals(fifaData).length)
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
