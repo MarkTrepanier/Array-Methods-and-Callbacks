@@ -38,7 +38,7 @@ function getFinals(data) {
    return allFinals;
 }
 
-// console.log(getFinals(fifaData).length)
+console.log(getFinals(fifaData).length)
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -52,7 +52,7 @@ function getYears(data,getFinalscb) {
     return finalYears;
 }
 
-console.log(getYears(fifaData,getFinals));
+// console.log(getYears(fifaData,getFinals));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use the higher-order function getWinners to do the following:  
@@ -72,7 +72,7 @@ function getWinners(data,getFinalscb) {
     })
     return winners;
 }
- console.log(getWinners(fifaData, getFinals));
+//  console.log(getWinners(fifaData, getFinals));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -92,7 +92,7 @@ function getWinnersByYear(data, getYearscb, getWinnerscb) {
     return winners.map((item, index) => `In ${years[index]}, ${winners[index]} won the world cup!`
 )
 }
-console.log(getWinnersByYear(fifaData,getYears,getWinners));
+// console.log(getWinnersByYear(fifaData,getYears,getWinners));
 
 
 
@@ -106,11 +106,12 @@ Use the higher order function getAverageGoals to do the following:
  Example of invocation: getAverageGoals(getFinals(fifaData));
 */
 
-function getAverageGoals(/* code here */) {
-   /* code here */
+function getAverageGoals(getFinalscb) {
+   const goalsToatal = getFinalscb.reduce((acc, item) =>
+    acc + (item['Home Team Goals'] * 1) + (item['Away Team Goals'] * 1) ,0)
+    return (goalsToatal / getFinals(fifaData).length).toFixed(2);
 }
-
-
+ console.log(getAverageGoals(getFinals(fifaData)));
 
 
 /// 🥅 STRETCH 🥅 ///
