@@ -62,8 +62,8 @@ Use the higher-order function getWinners to do the following:
 4. Returns the names of all winning countries in an array called `winners` */ 
 
 function getWinners(data,getFinalscb) {
-    const finalTeams = getFinalscb(data).map(item => `${item['Home Team Name']} ${item['Home Team Goals']}  ${item['Away Team Name']} ${item['Away Team Goals']}` )
-
+    const finalTeams = getFinalscb(data).map(item => `${item['Home Team Name']} ${item['Home Team Goals']} ${item['Away Team Name']} ${item['Away Team Goals']}`.split(' '))
+    
     return finalTeams;
 }
  console.log(getWinners(fifaData, getFinals));
